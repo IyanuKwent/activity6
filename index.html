@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <div id="sidebar" class="sidebar">
+            <div class="p-4 border-b">
+                <h1 class="text-2xl font-bold text-blue-600">BrandName</h1>
+            </div>
+            <ul class="p-4 space-y-4">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">About</a></li>
+                <li><a href="#" class="nav-link">Services</a></li>
+                <li><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="flex-1">
+            <!-- Hamburger Button -->
+            <button id="menu-button" class="menu-button">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+            <header class="hero">
+                <h2 class="hero-title">Welcome to Our Website</h2>
+                <p class="hero-text">We provide the best solutions for your business</p>
+                <a href="#" class="hero-button">Get Started</a>
+            </header>
+            
+            <section class="container mx-auto py-16 px-4">
+                <h3 class="text-3xl font-bold text-center mb-8">Our Features</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="feature-box">
+                        <h4 class="feature-title">Fast Performance</h4>
+                        <p class="feature-text">Optimized for speed and reliability.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 class="feature-title">Secure</h4>
+                        <p class="feature-text">Advanced security to protect your data.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 class="feature-title">User-Friendly</h4>
+                        <p class="feature-text">Easy to use with intuitive design.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="footer">
+                <p>&copy; 2025 BrandName. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const sidebar = document.getElementById('sidebar');
+        
+        menuButton.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+    </script>
+</body>
+</html>
