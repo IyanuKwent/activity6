@@ -1,16 +1,18 @@
 /* Sidebar */
 .sidebar {
     position: fixed;
-    inset: 0 auto 0 0;
-    width: 64px;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
     background: white;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
+    transition: left 0.3s ease-in-out;
+    padding-top: 20px;
 }
 
 .sidebar.open {
-    transform: translateX(0);
+    left: 0;
 }
 
 /* Navigation Links */
@@ -28,11 +30,19 @@
 
 /* Hamburger Button */
 .menu-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
     padding: 10px;
     border: none;
     background: none;
     cursor: pointer;
     outline: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-button.move {
+    transform: translateX(250px);
 }
 
 /* Hero Section */
