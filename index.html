@@ -9,12 +9,7 @@
 </head>
 <body class="bg-gray-100">
     <div class="flex">
-        <!-- Sidebar -->
         <div id="sidebar" class="sidebar">
-            <div class="p-4 border-b flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-blue-600">BrandName</h1>
-                <button id="close-button" class="close-button">&times;</button>
-            </div>
             <ul class="p-4 space-y-4">
                 <li><a href="#" class="nav-link">Home</a></li>
                 <li><a href="#" class="nav-link">About</a></li>
@@ -23,12 +18,11 @@
             </ul>
         </div>
         
-        <!-- Main Content -->
         <div class="flex-1">
-            <!-- Hamburger Button -->
             <button id="menu-button" class="menu-button">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                <svg id="menu-icon" class="w-8 h-8 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path id="menu-bars" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path id="menu-x" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
             
@@ -65,15 +59,17 @@
     <script>
         const menuButton = document.getElementById('menu-button');
         const sidebar = document.getElementById('sidebar');
-        const closeButton = document.getElementById('close-button');
-        
-        menuButton.addEventListener('click', () => {
-            sidebar.classList.add('open');
-        });
-        
-        closeButton.addEventListener('click', () => {
-            sidebar.classList.remove('open');
-        });
+        const menuBars = document.getElementById('menu-bars');
+        const menuX = document.getElementById('menu-x');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('open');
+            menuButton.classList.toggle('move'); 
+            menuBars.classList.toggle('hidden');
+            menuX.classList.toggle('hidden');
+        }
+
+        menuButton.addEventListener('click', toggleSidebar);
     </script>
 </body>
 </html>
