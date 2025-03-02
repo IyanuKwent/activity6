@@ -10,9 +10,10 @@
 <body class="bg-gray-100">
     <div class="flex">
         <!-- Sidebar -->
-        <div id="sidebar" class="sidebar hidden">
-            <div class="p-4 border-b">
+        <div id="sidebar" class="sidebar">
+            <div class="p-4 border-b flex justify-between items-center">
                 <h1 class="text-2xl font-bold text-blue-600">BrandName</h1>
+                <button id="close-button" class="close-button">&times;</button>
             </div>
             <ul class="p-4 space-y-4">
                 <li><a href="#" class="nav-link">Home</a></li>
@@ -64,9 +65,14 @@
     <script>
         const menuButton = document.getElementById('menu-button');
         const sidebar = document.getElementById('sidebar');
+        const closeButton = document.getElementById('close-button');
         
         menuButton.addEventListener('click', () => {
-            sidebar.classList.toggle('hidden');
+            sidebar.classList.add('open');
+        });
+        
+        closeButton.addEventListener('click', () => {
+            sidebar.classList.remove('open');
         });
     </script>
 </body>
